@@ -1,0 +1,27 @@
+$shadow-color: $black;
+
+// Standard Shadows
+$z1-shadow: 0  1px  3px rgba(#000, .12), 0  1px  2px rgba(#000, .24);
+$z2-shadow: 0  3px  6px rgba(#000, .16), 0  3px  6px rgba(#000, .23);
+$z3-shadow: 0 10px 20px rgba(#000, .19), 0  6px  6px rgba(#000, .23);
+$z4-shadow: 0 14px 28px rgba(#000, .25), 0 10px 10px rgba(#000, .22);
+$z5-shadow: 0 19px 38px rgba(#000, .30), 0 15px 12px rgba(#000, .22);
+
+@mixin material-shadow($z) {
+  @if $z == 1 {
+    @include box-shadow($z1-shadow);
+  }
+  @if $z == 2 {
+    @include box-shadow($z2-shadow);
+  }
+  @if $z == 3 {
+    @include box-shadow($z3-shadow);
+  }
+  @if $z == 4 {
+    @include box-shadow($z4-shadow);
+  }
+  @if $z == 5 {
+    @include box-shadow($z5-shadow);
+  }
+
+}

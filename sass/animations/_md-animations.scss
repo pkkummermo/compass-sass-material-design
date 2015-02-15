@@ -1,0 +1,5 @@
+@mixin material-shadow-transition() {
+  @include transition(
+          box-shadow .7s .01s $md-bezier-ease-out-expo
+  );
+}

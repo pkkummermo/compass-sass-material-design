@@ -1,0 +1,7 @@
+%clickable {
+  cursor: pointer;
+}
+
+%no-select {
+  @include user-select(none);
+}

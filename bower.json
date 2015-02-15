@@ -1,0 +1,27 @@
+{
+  "name": "compass-sass-material-design",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pkkummermo/compass-sass-material-design",
+  "authors": [
+    "Per Kristian Kummermo <per.kristian@kummermo.com>"
+  ],
+  "main": [
+    "./dist/**"
+  ],
+  "description": "Collection of Googles Material Design in a sassy world with a dash of compass",
+  "keywords": [
+    "compass",
+    "material-design",
+    "sass",
+    "material",
+    "design"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

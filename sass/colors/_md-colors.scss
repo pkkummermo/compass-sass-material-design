@@ -1,0 +1,71 @@
+// Material design has defined certain variables to be used throughout the solution
+// I've therefor defined a default and overrides based on simple config variables
+@import '../setup/helper-functions';
+@import 'md-color-map';
+// Config variables
+$md-main-color: 'grey' !default;
+$md-main-accent-color: $md-main-color !default;
+
+$md-color-definition: '500' !default;
+
+$md-font-color-light: #fff !default;
+$md-font-color-dark: rgba(0, 0, 0, .87) !default;
+
+// Helpers
+@function material-design-get-font-color($color-definition, $color-definition-threshold) {
+  @if $color-definition-threshold {
+    @if $color-definition >= $color-definition-threshold {
+      @return $md-font-color-light;
+    } @else {
+      @return $md-font-color-dark;
+    }
+  } @else {
+    @warn 'Color threshold for given color not found. Please add it to the color map. Returned default black';
+    @return $md-font-color-dark;
+  }
+}
+
+@function material-design-is-accent($color-definition) {
+  @return type-of($color-definition) != number and str-index($color-definition, 'a') == 1;
+}
+
+// Material color functions
+// Turned out alot more complex than anticipated due to color thresholds and sass casting </3
+@function material-color($color-definition: $md-color-definition, $color-name: $md-main-color) {
+  $color-map: map-get($material-colors, $color-name);
+  @if $color-map {
+    // Found color, now check if it's an accent
+    @if material-design-is-accent($color-definition) {
+      $accent-map: map-get($color-map, 'a');
+      $color-definition: number(str-slice($color-definition, 2, 4));
+      @return map-get($accent-map, $color-definition);
+    } @else {
+      @return map-get($color-map, $color-definition);
+    }
+  } @else {
+    @warn 'Could not find the color you defined in your setup. Your $color-name did not exist in the md-color-map';
+  }
+}
+
+@function material-font-color($color-definition: $md-color-definition, $color-name: $md-main-color) {
+  $color-map: map-get($material-colors, $color-name);
+  @if $color-map {
+    // Found color, now check if it's an accent
+    @if material-design-is-accent($color-definition) {
+      $accent-map: map-get($color-map, 'a');
+      $color-definition: number(str-slice($color-definition, 2, 4));
+      @return material-design-get-font-color($color-definition, map-get($accent-map, 'font-threshold'));
+    } @else {
+      @return material-design-get-font-color($color-definition, map-get($color-map, 'font-threshold'));
+    }
+  } @else {
+    @warn 'Could not find the color you defined in your setup. Your $color-name did not exist in the md-color-map';
+  }
+}
+
+// Material color mixins
+// This was a sort of nice to have. It pushes the color as background and gives the appropriate font color.
+@mixin material-color-mixin($color-definition: $md-color-definition, $color-name: $md-main-color) {
+  background-color: material-color($color-definition, $color-name);
+  color: material-font-color($color-definition, $color-name);
+}
