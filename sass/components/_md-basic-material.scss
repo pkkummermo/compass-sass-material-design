@@ -1,0 +1,17 @@
+.md-basic {
+  @extend %clickable;
+  @include material-shadow-transition();
+  @include material-shadow(1);
+
+  &:hover {
+    @include material-shadow(2);
+  }
+
+  &:active {
+    @include material-shadow(3);
+  }
+}
+
+.md-static {
+  @include material-shadow(1);
+}

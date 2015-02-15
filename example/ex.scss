@@ -1,0 +1,23 @@
+@import '../sass/md-core-with-components';
+
+.page {
+  margin: 20px auto;
+  width: 960px;
+}
+
+.example-container {
+  width: 100%;
+}
+
+.my-simple-square-box {
+  @extend %no-select;
+  @include inline-block;
+  height: 250px;
+  margin: 20px;
+  padding: 20px;
+  width: 250px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}

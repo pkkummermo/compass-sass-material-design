@@ -1,0 +1,33 @@
+// Including and defining font-families
+
+// Roboto
+@include font-face('Roboto Black', font-files('Roboto-Black.ttf'));
+@include font-face('Roboto Black Italic', font-files('Roboto-BlackItalic.ttf'));
+@include font-face('Roboto Bold', font-files('Roboto-Bold.ttf'));
+@include font-face('Roboto Bold Italic', font-files('Roboto-BoldItalic.ttf'));
+@include font-face('Roboto Italic', font-files('Roboto-Italic.ttf'));
+@include font-face('Roboto Light', font-files('Roboto-Light.ttf'));
+@include font-face('Roboto Light Italic', font-files('Roboto-LightItalic.ttf'));
+@include font-face('Roboto Medium', font-files('Roboto-Medium.ttf'));
+@include font-face('Roboto Medium Italic', font-files('Roboto-MediumItalic.ttf'));
+@include font-face('Roboto Regular', font-files('Roboto-Regular.ttf'));
+@include font-face('Roboto Thin', font-files('Roboto-Thin.ttf'));
+@include font-face('Roboto Thin Italic', font-files('Roboto-ThinItalic.ttf'));
+@include font-face('Roboto Condensed Bold', font-files('RobotoCondensed-Black.ttf'));
+@include font-face('Roboto Condensed Bold Italic', font-files('RobotoCondensed-BlackItalic.ttf'));
+@include font-face('Roboto Condensed Italic', font-files('RobotoCondensed-Italic.ttf'));
+@include font-face('Roboto Condensed Light', font-files('RobotoCondensed-Light.ttf'));
+@include font-face('Roboto Condensed Light Italic', font-files('RobotoCondensed-LightItalic.ttf'));
+@include font-face('Roboto Condensed Regular', font-files('RobotoCondensed-Regular.ttf'));
+
+@mixin source-sans-pro-light() {
+  font-family: 'SourceSansPro Light',Tahoma,sans-serif;
+}
+
+@mixin source-sans-pro-regular() {
+  font-family: 'SourceSansPro Regular', helvetica, arial, sans-serif;
+}
+
+@mixin helvetica-arial() {
+  font-family: Helvetica, Arial,sans-serif;
+}
