@@ -1,0 +1,35 @@
+{
+  "name": "Kummermo.com",
+  "version": "1.0.0",
+  "description": "Collection of independent material design functions.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-autoprefixer": ">=0.6.0",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-connect": ">=0.9.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-scss-lint": "^0.3.4",
+    "grunt-contrib-jshint": "^0.10.0",
+    "load-grunt-tasks": "^2.0.0",
+    "jshint-stylish": "^1.0.0",
+    "time-grunt": "^1.0.0"
+  },
+  "scripts": {
+    "test": []
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "private": "true",
+  "author": "Per Kristian Kummermo",
+  "license": "ISC"
+}
